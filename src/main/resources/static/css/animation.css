@@ -11,9 +11,9 @@
   }
 
   @keyframes dissaper {
-      0% {transform: opacity(1);}
-      50% {transform: opacity(0.5);}
-      0% {transform: opacity(0);}
+      0% { opacity:1;}
+      50% {opacity:0.5;}
+      100% {opacity:0;}
   }
 
 .animated-title {
@@ -26,6 +26,8 @@
     transform: translate(-50%, -50%);
     width: 90vmin;
 
+    
+
   }
   .animated-title > div {
     height: 50%;
@@ -37,6 +39,7 @@
     font-size: 12vmin;
     padding: 2vmin 0;
     position: absolute;
+    
   }
   .animated-title > div div span {
     display: block;
@@ -51,12 +54,14 @@
     animation-fill-mode: forwards;
     bottom: 0;
     transform: translate(0, 100%);
+    
   }
   .animated-title > div.text-top div span:first-child {
     color: black;
   }
   .animated-title > div.text-bottom {
     bottom: 0;
+    
   }
   .animated-title > div.text-bottom div {
     animation: showBottomText 0.5s;
@@ -64,5 +69,7 @@
     animation-fill-mode: forwards;
     top: 0;
     transform: translate(0, -100%);
+
+    
     
   }
