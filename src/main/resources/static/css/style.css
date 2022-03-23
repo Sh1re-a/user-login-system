@@ -40,5 +40,6 @@ body{
     background: white;
     border-top-left-radius: 16px;
     border-bottom-left-radius: 16px;
+    opacity: 0;
 }
 
