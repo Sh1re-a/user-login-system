@@ -12,9 +12,8 @@ function fadeOutEffect(id) {
 }
 
 function fadeInEffect(id) {
-    var div = document.getElementById(id).style;
-    div.opacity= 0;
-    (function fade(){(s.opacity+=.1)<0?s.display="none":setTimeout(fade,30)})();
+    var div = document.getElementById(id)
+    div.classList.toggle("fadeIn")
 }
 
 
@@ -23,4 +22,7 @@ setTimeout(function() {
     s2.remove()
   }, 7000);
 
+setTimeout(function(){
 fadeInEffect("whiteBackground")
+},6700);
+
