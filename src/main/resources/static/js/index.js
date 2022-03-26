@@ -20,9 +20,9 @@ function fadeInEffect(id) {
 setTimeout(function() {
     var s2 = document.getElementById('animated-title')
     s2.remove()
-  }, 7000);
+  }, 3000);
 
-setTimeout(function(){
-fadeInEffect("whiteBackground")
-},6700);
+//setTimeout(function(){
+//fadeInEffect("whiteBackground")
+//},3000);
 

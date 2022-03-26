@@ -1,0 +1,54 @@
+.formBox{
+    margin: 15px;
+}
+
+.accountExits{
+    color: #9F9F9F;
+    opacity: 0.7;
+    font-size: 15px;
+    font-style: thin;
+}
+
+.textColor{
+    color: #6548F8;
+    opacity: 1;
+}
+
+.welcomeText{
+    font-size: 30px;
+    font-weight: bold;
+    
+}
+
+.smallTextUnderWelcomeText{
+    opacity: 0.5;
+    font-size: 15px;
+}
+
+.fullName{
+    color: #6548F8;
+    font-size: 12px;
+    position: absolute;
+    top: 245px;
+    left: 170px;
+    background-color: white;
+    font-weight: 100;
+    padding-left: 3px;
+    padding-right: 3px;
+
+}
+
+.fullNameForm{
+    height: 45px;
+    width: 300px;
+    border: 3px solid #6548F8;
+    border-radius: 5px;
+    outline: none;
+    
+}
+
+::placeholder{
+    padding: 20px;
+    font-weight: bold;
+    
+}
