@@ -13,16 +13,27 @@ function fadeOutEffect(id) {
 
 function fadeInEffect(id) {
     var div = document.getElementById(id)
+    
     div.classList.toggle("fadeIn")
+    
 }
 
 
 setTimeout(function() {
     var s2 = document.getElementById('animated-title')
     s2.remove()
-  }, 3000);
+  }, 4000);
 
-//setTimeout(function(){
-//fadeInEffect("whiteBackground")
-//},3000);
+setTimeout(function(){
+fadeInEffect("whiteBackground")
+},5000);
 
+
+const input = document.getElementById('formFullName');
+const log = document.getElementById('bror');
+
+input.onkeyup = logKey;
+
+function logKey(e) {
+  log.textContent += ` ${e.code}`;
+}

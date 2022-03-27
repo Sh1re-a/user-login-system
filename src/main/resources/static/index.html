@@ -8,11 +8,15 @@
     <link rel="stylesheet" href="/src/main/resources/static/css/style.css">
     <link rel="stylesheet" href="css/animation.css">
     <link rel="stylesheet" href="css/formBox.css">
+    <link rel="stylesheet" href="css/layout.css">
+    
 </head>
 <body>
     
  <div class="layout"> 
-<!--    <div class="animated-title" id = "animated-title">
+  <p id ="companyName">We make it BIG.</p>
+
+    <div class="animated-title" id = "animated-title">
         <div class="text-top">
           <div>
             <span>Welcome</span>
@@ -22,7 +26,7 @@
         <div class="text-bottom">
           <div>BIG</div>
         </div>
-</div>-->
+</div>
 </div> 
 <div class="whiteBackground" id="whiteBackground">
   <div class="formBox">
@@ -32,8 +36,18 @@
 
     <p class="smallTextUnderWelcomeText">Blandit libero volutpat sed cras ornare arcu dui. Accumsan in ni nisi scelerisque eu.</p>
 
-    <p class="fullName" > Full name </p>
-    <input class="fullNameForm"type="text" placeholder="Shirwac Abib">
+    <div class="formINput">
+    <p class="smallTextAbove1" > Full name </p>
+    <input class="fullNameForm"type="text" placeholder="Shirwac Abib" id="formFullName">
+    <p class="smallTextAbove2" > E-mail </p>
+    <input class="fullNameForm"type="text" placeholder="example@gmail.com" id="formEmail">
+    <p class="smallTextAbove3" > Password </p>
+    <input class="fullNameForm"type="password" placeholder="8+ strong character" id="formPassword">
+    <button class="submitButton" type="button">Create an account</button>
+    
+
+
+  </div>
          
 </div>
 </div>

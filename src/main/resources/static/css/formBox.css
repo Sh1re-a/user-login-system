@@ -1,5 +1,6 @@
 .formBox{
-    margin: 15px;
+    margin: 40px;
+    margin-top: 50px;
 }
 
 .accountExits{
@@ -17,22 +18,56 @@
 .welcomeText{
     font-size: 30px;
     font-weight: bold;
+    position: relative;
+    right: 1px;
     
 }
 
 .smallTextUnderWelcomeText{
+    
+    font-size: 12px;
+    font-weight: bold;
+    color: #9F9F9F;
     opacity: 0.5;
-    font-size: 15px;
+    position: relative;
+    top: -20px;
 }
 
-.fullName{
+.smallTextAbove1{
     color: #6548F8;
     font-size: 12px;
     position: absolute;
-    top: 245px;
-    left: 170px;
+    top: 273px;
+    left: 190px;
     background-color: white;
-    font-weight: 100;
+    font-weight: 200;
+    padding-left: 3px;
+    padding-right: 3px;
+    
+
+}
+
+.smallTextAbove2{
+    color: #6548F8;
+    font-size: 12px;
+    position: absolute;
+    top: 346px;
+    left: 190px;
+    background-color: white;
+    font-weight: 200;
+    padding-left: 3px;
+    padding-right: 3px;
+
+}
+
+.smallTextAbove3{
+    color: #6548F8;
+    font-size: 12px;
+    position: absolute;
+    top: 418px;
+    left: 190px;
+    background-color: white;
+    font-weight: 200;
     padding-left: 3px;
     padding-right: 3px;
 
@@ -44,11 +79,44 @@
     border: 3px solid #6548F8;
     border-radius: 5px;
     outline: none;
+    margin-bottom: 20px;
+   
     
 }
 
+input[type="text"] {
+   
+    padding-left: 14px;
+}
+
+input[type="password"] {
+   
+    padding-left: 14px;
+}
+
+
+
+
+
 ::placeholder{
-    padding: 20px;
+    
     font-weight: bold;
     
 }
+
+.formInput{
+   padding-top: 50px;
+}
+
+.submitButton{
+    height: 55px;
+    width: 322px;
+    border: 3px solid #6548F8 ;
+    border-radius: 5px;
+    
+    background: #6548F8;
+    color: white;
+    font-weight: bold;
+    
+}
+
