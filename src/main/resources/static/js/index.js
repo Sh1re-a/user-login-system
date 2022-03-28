@@ -18,7 +18,7 @@ function fadeInEffect(id) {
     
 }
 
-
+/*
 setTimeout(function() {
     var s2 = document.getElementById('animated-title')
     s2.remove()
@@ -37,3 +37,4 @@ input.onkeyup = logKey;
 function logKey(e) {
   log.textContent += ` ${e.code}`;
 }
+*/

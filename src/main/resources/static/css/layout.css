@@ -1,6 +1,27 @@
-#companyName{
-    font-size: 70px;
-    font-weight: bold;
-    opacity: 0;
+.welcomeScreen{
+    overflow: hidden;
 }
 
+#companyName{
+    position: absolute;
+    right: 280px;
+    top: 190px;
+    font-size: 70px;
+    font-weight: bold;
+    width: 400px;
+    color: white;
+    
+}
+
+.dot{
+    z-index: 3;
+    position: relative;
+    left: 500px;
+    top: 200px;
+    height: 100px;
+  width: 100px;
+  background-color: #bbb;
+  border-radius: 50%;
+  
+  overflow: hidden;
+}

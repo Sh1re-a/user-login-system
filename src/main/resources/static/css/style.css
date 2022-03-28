@@ -58,7 +58,7 @@ body{
     background: white;
     border-top-left-radius: 16px;
     border-bottom-left-radius: 16px;
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.8s ease-in;
     
 }
