@@ -16,7 +16,7 @@ public class EmailValidator implements Predicate<String> {
 
 
         for (int i = 0; i < email.length(); i++) {
-            if (email.contains("@")) {
+            if (email.charAt(i) == '@') {
                 containsAt++;
             }
         }
@@ -25,7 +25,7 @@ public class EmailValidator implements Predicate<String> {
         }
         String[] splitEmail = email.split("@");
         for (int i = 0; i < splitEmail[1].length(); i++) {
-            if (splitEmail[1].contains(".")) {
+            if (splitEmail[1].charAt(i) == '.') {
                 containsDot++;
             }
         }
