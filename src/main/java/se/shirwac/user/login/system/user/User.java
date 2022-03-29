@@ -1,6 +1,6 @@
 package se.shirwac.user.login.system.user;
 
-import java.util.Objects;
+
 
 public class User {
     private long id;
