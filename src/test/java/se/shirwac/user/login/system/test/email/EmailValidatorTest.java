@@ -24,7 +24,8 @@ public class EmailValidatorTest {
             "shirwac.abib@gmail.ssed,false",
             "shirwacabib.gmail.se, false",
             "....,false",
-            "shirwac@gmailse, false"
+            "shirwac@gmailse, false",
+            "123456, false"
     })
     @DisplayName("It should validate email")
     void itShouldValidateEmail(String email, boolean expected) {
