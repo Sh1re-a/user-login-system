@@ -19,13 +19,12 @@ public class EmailValidatorTest {
     @CsvSource({
             "shirwac.abib@gmail.se,true",
             "shirwac.abib@@gmail.se,false",
-            "shirwac.abib@gmail..sse,false"
+            "shirwac.abib@gmail..sse,false",
+            "shirwac.abib@gmail.ssed,false"
     })
     void itShouldValidateEmail(String email, boolean expected) {
 
-
-        boolean isValid = underTest.test(email);
-
+        boolean isValid = underTest.emailValidator(email);
         assertThat(isValid).isEqualTo(expected);
     }
 }
