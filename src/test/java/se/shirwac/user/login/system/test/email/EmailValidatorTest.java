@@ -20,11 +20,14 @@ public class EmailValidatorTest {
             "shirwac.abib@gmail.se,true",
             "shirwac.abib@@gmail.se,false",
             "shirwac.abib@gmail..sse,false",
-            "shirwac.abib@gmail.ssed,false"
+            "shirwac.abib@gmail.ssed,false",
+            "shirwacabib.gmail.se, false",
+            "....,false",
+            "shirwac@gmailse, false"
     })
     void itShouldValidateEmail(String email, boolean expected) {
 
-        boolean isValid = underTest.emailValidator(email);
+        boolean isValid = underTest.test(email);
         assertThat(isValid).isEqualTo(expected);
     }
 }

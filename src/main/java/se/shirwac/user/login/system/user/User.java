@@ -1,21 +1,27 @@
 package se.shirwac.user.login.system.user;
 
 
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
-public class User {
+public class User implements UserDetailsService {
     private long id;
-    private String firstName;
-    private String lastName;
+    private String fullName;
+
     private String email;
     private String password;
     private Boolean locked = false;
     private Boolean enabled = false;
 
-    public User(String firstName, String lastName, String email, String password) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public User(String fullName, String email, String password) {
+        this.fullName = fullName;
         this.email = email;
         this.password = password;
+    }
+
+    public User() {
+
     }
 
     public long getId() {
@@ -26,20 +32,12 @@ public class User {
         this.id = id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public String getEmail() {
@@ -78,12 +76,17 @@ public class User {
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
+                ", fullName='" + fullName + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", locked=" + locked +
                 ", enabled=" + enabled +
                 '}';
+    }
+
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        return null;
     }
 }

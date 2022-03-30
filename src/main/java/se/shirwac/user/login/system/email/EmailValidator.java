@@ -14,12 +14,16 @@ public class EmailValidator implements Predicate<String> {
         int containsAt = 0;
         int containsDot = 0;
 
+        if(email.isBlank()){
+            return false;
+        }
+
         for (int i = 0; i < email.length(); i++) {
             if (email.charAt(i) == '@') {
                 containsAt++;
             }
         }
-        if (containsAt > 1) {
+        if (containsAt > 1 || containsAt <= 0) {
             return false;
         }
         String[] splitEmailByAt = email.split("@");
@@ -31,7 +35,7 @@ public class EmailValidator implements Predicate<String> {
             }
         }
 
-        if (containsDot > 1) {
+        if (containsDot > 1 || containsDot <= 0) {
             return false;
         }
 
