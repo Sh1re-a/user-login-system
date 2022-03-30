@@ -23,7 +23,8 @@ public class EmailValidatorTest {
             "shirwac.abib@gmail.ssed,false",
             "shirwacabib.gmail.se, false",
             "....,false",
-            "shirwac@gmailse, false"
+            "shirwac@gmailse, false",
+            "shirwac@Yes.com, true"
     })
     void itShouldValidateEmail(String email, boolean expected) {
 
