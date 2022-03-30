@@ -8,8 +8,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 @Service
 public class UserService {
-    @Autowired
-    private UserRepo userRepo;
+
 
     public boolean validateFullName(String fullName) {
         String reg = "^[a-zA-Z\\s]+$";

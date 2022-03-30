@@ -1,6 +1,7 @@
 package se.shirwac.user.login.system.test.user;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import se.shirwac.user.login.system.user.User;
@@ -24,6 +25,7 @@ public class UserServiceTest {
             "s@hirwac a**b..sse,false",
             "shirwac omar, true"
     })
+    @DisplayName("It should validate fullname")
     void itShouldValidateFullName(String fullName, boolean expected){
         boolean isValid = underTest.validateFullName(fullName);
         assertThat(isValid).isEqualTo(expected);

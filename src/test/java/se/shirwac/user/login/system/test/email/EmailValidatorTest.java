@@ -1,6 +1,7 @@
 package se.shirwac.user.login.system.test.email;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import se.shirwac.user.login.system.email.EmailValidator;
@@ -25,6 +26,7 @@ public class EmailValidatorTest {
             "....,false",
             "shirwac@gmailse, false"
     })
+    @DisplayName("It should validate email")
     void itShouldValidateEmail(String email, boolean expected) {
 
         boolean isValid = underTest.test(email);

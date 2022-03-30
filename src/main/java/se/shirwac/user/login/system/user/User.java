@@ -5,13 +5,22 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
-public class User implements UserDetailsService {
-    private long id;
-    private String fullName;
+import javax.persistence.*;
 
+@Entity
+public class User implements UserDetailsService {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    @Column
+    private String fullName;
+    @Column
     private String email;
+    @Column
     private String password;
+    @Column
     private Boolean locked = false;
+    @Column
     private Boolean enabled = false;
 
     public User(String fullName, String email, String password) {
