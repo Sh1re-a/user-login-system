@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 public class PasswordValidator {
 
     boolean validatePassword(String password){
-        String reg = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$";
+        String reg = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d\\w\\W]{8,}$";
         Pattern pattern = Pattern.compile(reg,Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(password);
         return matcher.find();
