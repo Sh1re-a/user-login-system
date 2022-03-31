@@ -13,16 +13,13 @@ public class WebTest {
         System.setProperty(KEY_SAFARI_WEBDRIVER, SAFARI_WEBDRIVER_PATH);
         // Instantiate a SafariDriver class.
         WebDriver driver = new SafariDriver();
-// Launch Website
+        // Launch Website
         driver.navigate().to("http://www.google.com/");
-
-// Click on the search text box and send value
+        // Click on the search text box and send value
         driver.findElement(By.id("lst-ib")).sendKeys("BrowserStack");
-
-// Click on the search button
+        // Click on the search button
         driver.findElement(By.name("btnK")).click();
-
-// Close the Browser
+        // Close the Browser
         driver.close();
 
     }
