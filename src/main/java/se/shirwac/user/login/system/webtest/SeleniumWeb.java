@@ -10,7 +10,7 @@ public class SeleniumWeb {
     private static final String safariWebDriver = "webdriver.safari.driver";
     private static final String safariWebDriverPath = "/usr/bin/safaridriver";
 
-    public void runWebTest(){
+    public void runWebTest() throws InterruptedException {
 
         System.setProperty(safariWebDriver, safariWebDriverPath);
 
@@ -18,13 +18,15 @@ public class SeleniumWeb {
 
         driver.navigate().to("http://127.0.0.1:5500/src/main/resources/static/index.html");
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        Thread.sleep(3000);
 
 
         driver.findElement(By.id("formFullName")).sendKeys("Shirwac Abib");
+        driver.findElement(By.id("formEmail")).sendKeys("Shirwac.abib@gmail.com");
+        driver.findElement(By.id("formPassword")).sendKeys("123456789");
 
 
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        Thread.sleep(8000);
 
 
 

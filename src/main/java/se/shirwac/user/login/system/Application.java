@@ -10,9 +10,7 @@ public class Application {
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
 
-		SeleniumWeb x = new SeleniumWeb();
-		x.runWebTest();
-		//TODO: Lösa Selenium problemet!
+
 	}
 
 }

@@ -15,7 +15,7 @@ class SeleniumWebTest {
         underTest = new SeleniumWeb();
     }
     @Test
-    void runWebTest() {
+    void runWebTest() throws InterruptedException {
         underTest.runWebTest();
     }
 }
