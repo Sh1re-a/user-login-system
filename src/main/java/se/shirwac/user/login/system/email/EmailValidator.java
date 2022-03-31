@@ -3,6 +3,8 @@ package se.shirwac.user.login.system.email;
 import org.springframework.stereotype.Service;
 
 import java.util.function.Predicate;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Service
 public class EmailValidator implements Predicate<String> {
@@ -10,32 +12,31 @@ public class EmailValidator implements Predicate<String> {
 
     @Override
     public boolean test(String email) {
-        email.toLowerCase();
-        int containsAt = 0;
-        int containsDot = 0;
-
         if(email.isBlank()){
             return false;
         }
 
-        for (int i = 0; i < email.length(); i++) {
-            if (email.charAt(i) == '@') {
-                containsAt++;
-            }
-        }
-        if (containsAt > 1 || containsAt <= 0) {
+        Pattern pattern = Pattern.compile("([@])"); //case insensitive, use [g] for only lower
+        Matcher matcher = pattern.matcher(email);
+        int containsAt = 0;
+        while (matcher.find()){
+            containsAt++;}
+
+        if (containsAt != 1) {
             return false;
         }
+
         String[] splitEmailByAt = email.split("@");
         String domainName = splitEmailByAt[1];
         String[] splitDomainName = domainName.split("\\.");
-        for (int i = 0; i < splitEmailByAt[1].length(); i++) {
-            if (splitEmailByAt[1].charAt(i) == '.') {
-                containsDot++;
-            }
-        }
 
-        if (containsDot > 1 || containsDot <= 0) {
+        pattern = Pattern.compile("([.])");
+        matcher = pattern.matcher(domainName);
+        int containsDot = 0;
+        while (matcher.find()){
+            containsDot++;
+        }
+        if (containsDot != 1) {
             return false;
         }
 

@@ -1,5 +1,5 @@
 .welcomeScreen{
-    overflow: hidden;
+    
 }
 
 #companyName{
@@ -14,14 +14,14 @@
 }
 
 .dot{
-    z-index: 3;
-    position: relative;
-    left: 500px;
-    top: 200px;
+    
+    position: absolute;
+    left: 800px;
+    top: 70px;
     height: 100px;
-  width: 100px;
-  background-color: #bbb;
-  border-radius: 50%;
+    width: 100px;
+    background-color: #bbb;
+    border-radius: 50%;
+    overflow: hidden;
   
-  overflow: hidden;
 }

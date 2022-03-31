@@ -9,6 +9,8 @@ import java.util.regex.Pattern;
 @Service
 public class UserService {
 
+    @Autowired
+    private UserRepo userRepo;
 
     public boolean validateFullName(String fullName) {
         String reg = "^[a-zA-Z\\s]+$";
@@ -17,11 +19,19 @@ public class UserService {
         return matcher.find();
     }
 
-   /* public String signUpUser(User user){
+        public Boolean ifUserExits(User user){
         boolean userExists = userRepo.findByEmail(user.getEmail()).isPresent();
+        if(userExists){
+            throw new IllegalStateException("email already exits");
+        }
+        if(user == null){
+            throw new IllegalStateException("user is null");
+
+        }
+        else return true;
 
 
     }
 
-    */
+
 }
