@@ -28,6 +28,10 @@ public class EmailValidatorTest {
 
             "123456, false",
 
+
+            "123456, false",
+
+
             "shirwac@Yes.com, true",
             "123445, false"
 
