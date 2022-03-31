@@ -1,10 +1,8 @@
-package se.shirwac.user.login.system.webtest;
+package se.shirwac.user.login.system.test.webtest;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.safari.SafariDriver;
-
-import java.util.concurrent.TimeUnit;
 
 public class SeleniumWeb {
     private static final String safariWebDriver = "webdriver.safari.driver";
@@ -13,18 +11,15 @@ public class SeleniumWeb {
     public void runWebTest() throws InterruptedException {
 
         System.setProperty(safariWebDriver, safariWebDriverPath);
-
         WebDriver driver = new SafariDriver();
 
         driver.navigate().to("http://127.0.0.1:5500/src/main/resources/static/index.html");
         driver.manage().window().maximize();
         Thread.sleep(3000);
 
-
         driver.findElement(By.id("formFullName")).sendKeys("Shirwac Abib");
         driver.findElement(By.id("formEmail")).sendKeys("Shirwac.abib@gmail.com");
         driver.findElement(By.id("formPassword")).sendKeys("123456789");
-
 
         Thread.sleep(8000);
 

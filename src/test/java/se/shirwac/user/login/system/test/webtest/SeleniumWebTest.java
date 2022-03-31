@@ -1,11 +1,7 @@
-package se.shirwac.user.login.system.webtest;
+package se.shirwac.user.login.system.test.webtest;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.safari.SafariDriver;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class SeleniumWebTest {
 
@@ -16,6 +12,7 @@ class SeleniumWebTest {
     }
     @Test
     void runWebTest() throws InterruptedException {
-        underTest.runWebTest();
+        
+
     }
 }
