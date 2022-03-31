@@ -23,6 +23,7 @@ class PasswordValidatorTest {
             "123shirwac,true",
             "shirwacwac, false",
             "1234567, false",
+            "1345, false",
             "Shirwac@123, true",
             "Shirwac@, false",
             "shi123, false"
