@@ -1,4 +1,4 @@
-package se.shirwac.user.login.system.test.webtest;
+package se.shirwac.user.login.system.webtest;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,7 +12,6 @@ class SeleniumWebTest {
     }
     @Test
     void runWebTest() throws InterruptedException {
-        
-
+    underTest.runWebTest();
     }
 }

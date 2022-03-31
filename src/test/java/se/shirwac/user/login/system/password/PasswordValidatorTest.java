@@ -1,4 +1,4 @@
-package se.shirwac.user.login.system.test.password;
+package se.shirwac.user.login.system.password;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
