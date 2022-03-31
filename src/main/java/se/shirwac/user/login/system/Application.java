@@ -12,6 +12,7 @@ public class Application {
 
 		WebTest x = new WebTest();
 		x.runWebTest();
+		//TODO: Lösa Selenium problemet!
 	}
 
 }

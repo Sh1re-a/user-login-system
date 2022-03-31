@@ -5,8 +5,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 public class WebTest {
+    private static final String KEY_SAFARI_WEBDRIVER = "webdriver.safari.driver";
+    private static final String SAFARI_WEBDRIVER_PATH = "/usr/bin/safaridriver";
 
     public void runWebTest(){
+
+        System.setProperty(KEY_SAFARI_WEBDRIVER, SAFARI_WEBDRIVER_PATH);
         // Instantiate a SafariDriver class.
         WebDriver driver = new SafariDriver();
 // Launch Website
