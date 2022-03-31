@@ -69,8 +69,13 @@
 		</dependency>
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-server</artifactId>
-			<version>4.0.0-alpha-2</version>
+			<artifactId>selenium-api</artifactId>
+			<version>3.141.59</version>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-support</artifactId>
+			<version>3.141.59</version>
 		</dependency>
 
 
@@ -86,5 +91,7 @@
 		</plugins>
 		</pluginManagement>
 	</build>
+
+
 
 </project>
