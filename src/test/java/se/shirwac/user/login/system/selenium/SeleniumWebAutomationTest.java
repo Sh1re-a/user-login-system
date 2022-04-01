@@ -21,10 +21,8 @@ class SeleniumWebAutomationTest {
     public void testInitializeDriver() {
         System.setProperty(safariWebDriver, safariWebDriverPath);
         safariDriver = new SafariDriver();
-
         safariDriver.navigate().to("https://www.saucedemo.com");
         safariDriver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-
     }
 
     @Test
