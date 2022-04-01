@@ -1,4 +1,5 @@
-package se.shirwac.user.login.system.webtest;
+package se.shirwac.user.login.system.selenium;
+
 
 import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;
@@ -8,9 +9,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.safari.SafariDriver;
 import java.util.concurrent.TimeUnit;
-import org.junit.Assert;
 
-class SeleniumWebTest {
+class SeleniumWebAutomationTest {
 
     private static final String safariWebDriver = "webdriver.safari.driver";
     private static final String safariWebDriverPath = "/usr/bin/safaridriver";

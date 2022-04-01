@@ -1,14 +1,10 @@
-package se.shirwac.user.login.system.webtest;
+package se.shirwac.user.login.system.selenium;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
-import java.util.concurrent.TimeUnit;
-
-public class SeleniumWeb {
+public class SeleniumWebAutomation {
     private static final String safariWebDriver = "webdriver.safari.driver";
     private static final String safariWebDriverPath = "/usr/bin/safaridriver";
 
