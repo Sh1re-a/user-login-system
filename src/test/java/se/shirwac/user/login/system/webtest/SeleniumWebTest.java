@@ -32,8 +32,6 @@ class SeleniumWebTest {
         safariDriver.navigate().to("https://www.saucedemo.com");
         safariDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         safariDriver.manage().window().maximize();
-
-
     }
 
     @Test
@@ -64,20 +62,6 @@ class SeleniumWebTest {
             safariDriver.quit();
         }
     }
-
-
-
- /*   @Test
-    void TestThatSeleniumWebTestIsWorking() throws InterruptedException {
-        doCallRealMethod().when(seleniumWeb).runWebTest();
-    }
-
-    @Test
-    void TestThatSeleniumWebThrowException() throws InterruptedException {
-        doThrow(InterruptedException.class).when(seleniumWeb).runWebTest();
-    }
-
-  */
 
 
 }

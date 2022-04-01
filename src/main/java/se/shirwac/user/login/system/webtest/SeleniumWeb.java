@@ -19,7 +19,12 @@ public class SeleniumWeb {
 
         driver.navigate().to("http://127.0.0.1:5500/src/main/resources/static/index.html");
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+        try{
+            Thread.sleep(2000);
+        } catch (InterruptedException e){
+            System.out.println("something went wrong");
+        }
+
 
         driver.findElement(By.id("formFullName")).sendKeys("Shirwac Abib");
         driver.findElement(By.id("formEmail")).sendKeys("Shirwac.abib@gmail.com");
@@ -27,7 +32,11 @@ public class SeleniumWeb {
         String heading = driver.findElement(By.id("welcomeText")).getText();
 
 
-        driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
+        try{
+            Thread.sleep(4000);
+        } catch (InterruptedException e){
+            System.out.println("something went wrong");
+        }
         driver.close();
         System.out.println(heading);
 
