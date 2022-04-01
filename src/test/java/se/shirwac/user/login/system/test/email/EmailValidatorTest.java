@@ -19,21 +19,27 @@ public class EmailValidatorTest {
     @ParameterizedTest
     @CsvSource({
             "shirwac.abib@gmail.se,true",
-            "shirwac.abib@@gmail.se,false",
-            "shirwac.abib@gmail..sse,false",
-            "shirwac.abib@gmail.ssed,false",
-            "shirwacabib.gmail.se, false",
-            "....,false",
-            "shirwac@gmailse, false",
-            "123456, false",
             "shirwac@Yes.com, true",
-            "123445, false"
+            "123456@no.se, true"
     })
     @DisplayName("It should validate email")
     void itShouldValidateEmail(String email, boolean expected) {
 
         boolean isValid = underTest.test(email);
         assertThat(isValid).isEqualTo(expected);
+    }
+    @ParameterizedTest
+    @CsvSource({
+            "shirwac.abib@@gmail.se,false",
+            "shirwac.abib@gmail..sse,false",
+            "shirwac.abib@gmail.ssed,false",
+            "shirwacabib.gmail.se, false",
+            "123445, false"
+    })
+    @DisplayName("It should validate email")
+    void itShouldNotValidateEmail(String email, boolean expected){
+        boolean isNotValid = underTest.test(email);
+        assertThat(isNotValid).isEqualTo(expected);
     }
 }
 

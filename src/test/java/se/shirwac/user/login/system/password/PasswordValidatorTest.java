@@ -15,18 +15,14 @@ class PasswordValidatorTest {
     @BeforeEach
     void setUp() {
         underTest = new PasswordValidator();
-
     }
 
     @ParameterizedTest
     @CsvSource({
             "123shirwac,true",
-            "shirwacwac, false",
-            "1234567, false",
-            "1345, false",
             "Shirwac@123, true",
-            "Shirwac@, false",
-            "shi123, false"
+            "1shirwac, true",
+            "1234567S, true"
     })
     @DisplayName("It should validate password")
     void itShouldValidatePassword(String password, boolean expected) {
@@ -34,5 +30,20 @@ class PasswordValidatorTest {
         boolean isValid = underTest.validatePassword(password);
 
         assertThat(isValid).isEqualTo(expected);
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+            "shirwacwac, false",
+            "1345, false",
+            "Shirwac@, false",
+            "shi123, false"
+    })
+    @DisplayName("It should not validate password")
+    void itShouldNotValidatePassword(String password, boolean expected) {
+
+        boolean isNotValid = underTest.validatePassword(password);
+
+        assertThat(isNotValid).isEqualTo(expected);
     }
 }

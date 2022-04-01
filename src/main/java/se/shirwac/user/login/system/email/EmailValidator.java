@@ -15,8 +15,7 @@ public class EmailValidator implements Predicate<String> {
         if(email.isBlank()){
             return false;
         }
-
-        Pattern pattern = Pattern.compile("([@])"); //case insensitive, use [g] for only lower
+        Pattern pattern = Pattern.compile("([@])");
         Matcher matcher = pattern.matcher(email);
         int containsAt = 0;
         while (matcher.find()){
@@ -28,8 +27,6 @@ public class EmailValidator implements Predicate<String> {
 
         String[] splitEmailByAt = email.split("@");
         String domainName = splitEmailByAt[1];
-        String[] splitDomainName = domainName.split("\\.");
-
         pattern = Pattern.compile("([.])");
         matcher = pattern.matcher(domainName);
         int containsDot = 0;
@@ -40,8 +37,11 @@ public class EmailValidator implements Predicate<String> {
             return false;
         }
 
+
+        String[] splitDomainName = domainName.split("\\.");
         if(splitDomainName[1].length() > 3){
             return false;
         }
+
         else return true;
     }}

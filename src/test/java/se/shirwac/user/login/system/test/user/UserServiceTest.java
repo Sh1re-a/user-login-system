@@ -26,11 +26,22 @@ public class UserServiceTest {
             "s@hirwac a**b..sse,false",
             "shirwac omar, true"
     })
-    @DisplayName("It should validate fullname")
+    @DisplayName("It should validate full name")
     void itShouldValidateFullName(String fullName, boolean expected){
         boolean isValid = underTest.validateFullName(fullName);
         assertThat(isValid).isEqualTo(expected);
    }
+
+    @ParameterizedTest
+    @CsvSource({
+            "sh123rwac ab21b,false",
+            "s@hirwac a**b..sse,false"
+    })
+    @DisplayName("It should not validate full name")
+    void itShouldNotValidateFullName(String fullName, boolean expected){
+        boolean isNotValid = underTest.validateFullName(fullName);
+        assertThat(isNotValid).isEqualTo(expected);
+    }
 
 
 }
