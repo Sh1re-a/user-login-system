@@ -24,14 +24,11 @@ public class SeleniumWeb {
         } catch (InterruptedException e){
             System.out.println("something went wrong");
         }
-
-
         driver.findElement(By.id("formFullName")).sendKeys("Shirwac Abib");
         driver.findElement(By.id("formEmail")).sendKeys("Shirwac.abib@gmail.com");
         driver.findElement(By.id("formPassword")).sendKeys("123456789");
         String heading = driver.findElement(By.id("welcomeText")).getText();
-
-
+        
         try{
             Thread.sleep(4000);
         } catch (InterruptedException e){
