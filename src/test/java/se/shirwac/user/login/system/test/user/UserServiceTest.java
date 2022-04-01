@@ -1,5 +1,6 @@
 package se.shirwac.user.login.system.test.user;
 
+import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -29,7 +30,7 @@ public class UserServiceTest {
     @DisplayName("It should validate full name")
     void itShouldValidateFullName(String fullName, boolean expected){
         boolean isValid = underTest.validateFullName(fullName);
-        assertThat(isValid).isEqualTo(expected);
+        Assert.assertEquals(expected,isValid);
    }
 
     @ParameterizedTest
@@ -40,7 +41,7 @@ public class UserServiceTest {
     @DisplayName("It should not validate full name")
     void itShouldNotValidateFullName(String fullName, boolean expected){
         boolean isNotValid = underTest.validateFullName(fullName);
-        assertThat(isNotValid).isEqualTo(expected);
+        Assert.assertEquals(expected,isNotValid);
     }
 
 

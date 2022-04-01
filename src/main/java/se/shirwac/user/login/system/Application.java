@@ -2,7 +2,7 @@ package se.shirwac.user.login.system;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import se.shirwac.user.login.system.selenium.SeleniumWebAutomation;
+import se.shirwac.user.login.system.test.selenium.SeleniumWebAutomation;
 
 @SpringBootApplication
 public class Application {

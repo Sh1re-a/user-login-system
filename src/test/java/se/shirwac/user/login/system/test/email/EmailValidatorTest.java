@@ -1,10 +1,10 @@
 package se.shirwac.user.login.system.test.email;
 
+import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-import se.shirwac.user.login.system.email.EmailValidator;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -26,7 +26,7 @@ public class EmailValidatorTest {
     void itShouldValidateEmail(String email, boolean expected) {
 
         boolean isValid = underTest.test(email);
-        assertThat(isValid).isEqualTo(expected);
+        Assert.assertEquals(expected,isValid);
     }
     @ParameterizedTest
     @CsvSource({
@@ -39,7 +39,7 @@ public class EmailValidatorTest {
     @DisplayName("It should validate email")
     void itShouldNotValidateEmail(String email, boolean expected){
         boolean isNotValid = underTest.test(email);
-        assertThat(isNotValid).isEqualTo(expected);
+        Assert.assertEquals(expected,isNotValid);
     }
 }
 

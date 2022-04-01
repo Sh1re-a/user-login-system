@@ -1,4 +1,4 @@
-package se.shirwac.user.login.system.selenium;
+package se.shirwac.user.login.system.test.selenium;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

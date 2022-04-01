@@ -1,5 +1,6 @@
-package se.shirwac.user.login.system.password;
+package se.shirwac.user.login.system.test.password;
 
+import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -29,7 +30,7 @@ class PasswordValidatorTest {
 
         boolean isValid = underTest.validatePassword(password);
 
-        assertThat(isValid).isEqualTo(expected);
+        Assert.assertEquals(expected,isValid);
     }
 
     @ParameterizedTest
@@ -44,6 +45,6 @@ class PasswordValidatorTest {
 
         boolean isNotValid = underTest.validatePassword(password);
 
-        assertThat(isNotValid).isEqualTo(expected);
+        Assert.assertEquals(expected,isNotValid);
     }
 }

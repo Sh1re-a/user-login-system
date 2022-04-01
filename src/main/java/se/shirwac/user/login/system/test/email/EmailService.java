@@ -1,4 +1,4 @@
-package se.shirwac.user.login.system.email;
+package se.shirwac.user.login.system.test.email;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,4 +1,4 @@
-package se.shirwac.user.login.system.selenium;
+package se.shirwac.user.login.system.test.selenium;
 
 
 import org.junit.Assert;
@@ -31,7 +31,6 @@ class SeleniumWebAutomationTest {
         WebElement m=safariDriver.
                 findElement(By.id("login-button"));
         m.click();
-
     }
 
     @Test

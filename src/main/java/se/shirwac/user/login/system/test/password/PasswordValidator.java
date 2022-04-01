@@ -1,4 +1,4 @@
-package se.shirwac.user.login.system.password;
+package se.shirwac.user.login.system.test.password;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
