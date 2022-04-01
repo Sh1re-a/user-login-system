@@ -31,7 +31,7 @@ public class SeleniumWebAutomationTestOnMySite {
     }
 
 
-    @Disabled
+    @Test
     public void testWritingInFormOnMyWebsite(){
         seleniumWebAutomation.writeInForm("formFullName","Shirwac Abib",safariDriver);
         seleniumWebAutomation.writeInForm("formEmail","Shirwac@gmail.com",safariDriver);
