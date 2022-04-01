@@ -25,8 +25,6 @@ class SeleniumWebAutomationTest {
         safariDriver.navigate().to("https://www.saucedemo.com");
         safariDriver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 
-
-
     }
 
     @Test
@@ -46,8 +44,9 @@ class SeleniumWebAutomationTest {
         String expectedText = "Accepted usernames are:standard_userlocked_out_userproblem_userperformance_glitch_user";
         String text = safariDriver.findElement(By.id("login_credentials")).getText();
         Assert.assertEquals(expectedText, text);
-
     }
+
+
     @AfterEach
     public void closeDriver()
     {
@@ -59,8 +58,6 @@ class SeleniumWebAutomationTest {
                 System.out.println("something went wrong");
             }
             safariDriver.quit();
-
-
         }
     }
 
