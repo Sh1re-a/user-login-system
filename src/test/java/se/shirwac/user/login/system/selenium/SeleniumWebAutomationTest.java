@@ -21,9 +21,11 @@ class SeleniumWebAutomationTest {
     public void testInitializeDriver() {
         System.setProperty(safariWebDriver, safariWebDriverPath);
         safariDriver = new SafariDriver();
-        safariDriver.navigate().to("https://www.saucedemo.com");
 
+        safariDriver.navigate().to("https://www.saucedemo.com");
         safariDriver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+
+
 
     }
 
@@ -51,7 +53,14 @@ class SeleniumWebAutomationTest {
     {
         if (safariDriver != null)
         {
+            try{
+                Thread.sleep(500);
+            } catch (InterruptedException e){
+                System.out.println("something went wrong");
+            }
             safariDriver.quit();
+
+
         }
     }
 
