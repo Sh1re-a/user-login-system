@@ -1,4 +1,4 @@
-package se.shirwac.user.login.system.test.email;
+package se.shirwac.user.login.system.email;
 
 import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;

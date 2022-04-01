@@ -1,4 +1,4 @@
-package se.shirwac.user.login.system.test.email;
+package se.shirwac.user.login.system.email;
 
 import org.springframework.stereotype.Service;
 
