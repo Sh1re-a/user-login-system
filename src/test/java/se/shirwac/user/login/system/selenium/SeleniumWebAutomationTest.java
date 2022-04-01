@@ -23,9 +23,8 @@ class SeleniumWebAutomationTest {
         safariDriver = new SafariDriver();
         safariDriver.navigate().to("https://www.saucedemo.com");
 
+        safariDriver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 
-        safariDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        safariDriver.manage().window().maximize();
     }
 
     @Test
