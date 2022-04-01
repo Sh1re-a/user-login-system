@@ -1,22 +1,14 @@
 package se.shirwac.user.login.system.webtest;
 
 import org.junit.Assert;
-import org.junit.Rule;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.rules.ExpectedException;
-import org.mockito.Mockito;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.safari.SafariDriver;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import java.util.concurrent.TimeUnit;
-
-import static org.mockito.Mockito.*;
+import org.junit.Assert;
 
 class SeleniumWebTest {
 
