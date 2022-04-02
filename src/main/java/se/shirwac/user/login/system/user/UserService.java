@@ -19,17 +19,14 @@ public class UserService {
         return matcher.find();
     }
 
-        public Boolean ifUserExits(User user){
+        public String signUpUser(User user){
         boolean userExists = userRepo.findByEmail(user.getEmail()).isPresent();
         if(userExists){
             throw new IllegalStateException("email already exits");
         }
-        if(user == null){
-            throw new IllegalStateException("user is null");
 
-        }
-        else return true;
 
+    return null;
 
     }
 
