@@ -1,17 +1,23 @@
 package se.shirwac.user.login.system.registration.token;
 
+
+
+import org.hibernate.annotations.Entity;
 import org.springframework.data.annotation.Id;
 import se.shirwac.user.login.system.user.User;
 
-import javax.persistence.*;
+
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.JoinColumn;
 import java.time.LocalDateTime;
 
 @Entity
 public class ConfirmationToken {
 
     @Id
-    @GeneratedValue(
-            strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(nullable = false)
     private String token;
@@ -19,17 +25,16 @@ public class ConfirmationToken {
     private LocalDateTime createdAt;
     @Column(nullable = false)
     private LocalDateTime expiresAt;
-
+    @Column(nullable = false)
     private LocalDateTime confirmedAt;
-    @ManyToOne
-    @JoinColumn(nullable = false, name = "app_user_id")
+
+    @JoinColumn(nullable = false, name = "user_id")
     private User user;
 
-    public ConfirmationToken(String token, LocalDateTime createdAt, LocalDateTime expiresAt, LocalDateTime confirmedAt, User user) {
+    public ConfirmationToken(String token, LocalDateTime createdAt, LocalDateTime expiresAt,User user) {
         this.token = token;
         this.createdAt = createdAt;
         this.expiresAt = expiresAt;
-        this.confirmedAt = confirmedAt;
         this.user = user;
     }
 

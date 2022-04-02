@@ -11,7 +11,7 @@ import javax.persistence.*;
 public class User implements UserDetailsService {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     @Column
     private String fullName;
     @Column

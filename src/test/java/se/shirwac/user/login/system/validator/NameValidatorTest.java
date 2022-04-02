@@ -1,20 +1,21 @@
-package se.shirwac.user.login.system.user;
+package se.shirwac.user.login.system.validator;
 
 import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import se.shirwac.user.login.system.validator.NameValidator;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class UserServiceTest {
+public class NameValidatorTest {
 
-    private UserService underTest;
+    private NameValidator nameValidator;
 
     @BeforeEach
     void setUp(){
-        underTest = new UserService();
+        nameValidator = new NameValidator();
     }
 
     @ParameterizedTest
@@ -26,7 +27,7 @@ public class UserServiceTest {
     })
     @DisplayName("It should validate full name")
     void itShouldValidateFullName(String fullName, boolean expected){
-        boolean isValid = underTest.validateFullName(fullName);
+        boolean isValid = nameValidator.validateFullName(fullName);
         Assert.assertEquals(expected,isValid);
    }
 
@@ -37,7 +38,7 @@ public class UserServiceTest {
     })
     @DisplayName("It should not validate full name")
     void itShouldNotValidateFullName(String fullName, boolean expected){
-        boolean isNotValid = underTest.validateFullName(fullName);
+        boolean isNotValid = nameValidator.validateFullName(fullName);
         Assert.assertEquals(expected,isNotValid);
     }
 

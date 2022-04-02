@@ -1,10 +1,11 @@
-package se.shirwac.user.login.system.email;
+package se.shirwac.user.login.system.validator;
 
 import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import se.shirwac.user.login.system.validator.EmailValidator;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
