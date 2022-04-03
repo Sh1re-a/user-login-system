@@ -2,15 +2,11 @@ package se.shirwac.user.login.system.registration.token;
 
 
 
-import org.hibernate.annotations.Entity;
-import org.springframework.data.annotation.Id;
+
 import se.shirwac.user.login.system.user.User;
 
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.JoinColumn;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
@@ -28,6 +24,7 @@ public class ConfirmationToken {
     @Column(nullable = false)
     private LocalDateTime confirmedAt;
 
+    @ManyToOne
     @JoinColumn(nullable = false, name = "user_id")
     private User user;
 
