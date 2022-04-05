@@ -59,7 +59,9 @@ xhr.send(post)
 xhr.onload = function(){
     if(xhr.status === 200){
         console.log("Det funka")
-        
+        var data = JSON.stringify(this.response)
+        var token = data[0];
+        console.log(token)
     } 
 
 }
