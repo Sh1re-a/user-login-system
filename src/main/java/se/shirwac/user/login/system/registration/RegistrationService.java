@@ -9,6 +9,8 @@ import se.shirwac.user.login.system.registration.token.ConfirmationTokenService;
 import se.shirwac.user.login.system.user.User;
 import se.shirwac.user.login.system.user.UserService;
 import se.shirwac.user.login.system.validator.EmailValidator;
+import se.shirwac.user.login.system.validator.NameValidator;
+import se.shirwac.user.login.system.validator.PasswordValidator;
 
 import java.time.LocalDateTime;
 
@@ -18,20 +20,34 @@ public class RegistrationService {
      private final EmailValidator emailValidator;
      private final ConfirmationTokenService confirmationTokenService;
      private final EmailSender emailSender;
+     private final PasswordValidator passwordValidator;
+     private final NameValidator nameValidator;
 
-    public RegistrationService(UserService userService, EmailValidator emailValidator, ConfirmationTokenService confirmationTokenService, EmailSender emailSender) {
+    public RegistrationService(UserService userService, EmailValidator emailValidator, ConfirmationTokenService confirmationTokenService, EmailSender emailSender, PasswordValidator passwordValidator, NameValidator nameValidator) {
         this.userService = userService;
         this.emailValidator = emailValidator;
         this.confirmationTokenService = confirmationTokenService;
         this.emailSender = emailSender;
+        this.passwordValidator = passwordValidator;
+        this.nameValidator = nameValidator;
     }
 
     public String register(RegistrationRequest registrationRequest){
         boolean isValidEmail = emailValidator.test(registrationRequest.getEmail());
+        boolean isValidPassword = passwordValidator.validatePassword(registrationRequest.getPassword());
+        boolean isFullNameValid = nameValidator.validateFullName(registrationRequest.getFullName());
 
         if(!isValidEmail){
             throw new IllegalStateException("Email is not valid");
         }
+        if(!isValidPassword){
+            throw new IllegalStateException("Password is not valid");
+        }
+        if(!isFullNameValid){
+            throw new IllegalStateException("Name is not valid");
+        }
+
+
 
         String token = userService.signUpUser(
                 new User(
@@ -41,11 +57,11 @@ public class RegistrationService {
                 )
         );
         String link = "http://localhost:8080/registration/confirm?token="  + token;
-     /*   emailSender.send(registrationRequest.getEmail(),
-                buildEmail(registrationRequest.getFullName(),link));
+       emailSender.send(registrationRequest.getEmail(),
+               buildEmail(registrationRequest.getFullName(),link));
 
 
-      */
+
 
         return token;
     }
