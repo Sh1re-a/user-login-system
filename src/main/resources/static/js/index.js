@@ -38,3 +38,30 @@ function logKey(e) {
   log.textContent += ` ${e.code}`;
 }
 */
+
+function register(){
+  var inputFullname = document.getElementById("formFullName").value;
+  var inputEmail = document.getElementById("formEmail").value;
+  var inputPassword = document.getElementById("formPassword").value;
+
+  let postObj = {
+    fullName: inputFullname,
+    email: inputEmail,
+    password: inputPassword
+}
+
+let post = JSON.stringify(postObj)
+
+var xhr = new XMLHttpRequest()
+xhr.open("POST", "http://localhost:8081/registration")
+xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8")
+xhr.send(post)
+xhr.onload = function(){
+    if(xhr.status === 200){
+        console.log("Det funka")
+        
+    } 
+
+}
+
+}
