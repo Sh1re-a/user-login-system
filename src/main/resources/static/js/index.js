@@ -1,3 +1,5 @@
+const { format } = require("express/lib/response");
+
 var delayInMilliseconds = 5000; //1 second
 
 setTimeout(function() {
@@ -39,6 +41,19 @@ function logKey(e) {
 }
 */
 
+function validateFullName(){
+  var inputFullname = document.getElementById("formFullName").value;
+  var inputFullNameWithoutValue = document.getElementById("formFullName")
+  var pattern = "^[a-zA-Z\s]+$"
+  if(inputFullname.match(pattern)){
+    inputFullNameWithoutValue.classList
+  }
+  else{
+    inputFullNameWithoutValue.classList.remove("valid")
+    inputFullNameWithoutValue.classList.add("invalid")
+  }
+}
+
 function register(){
   var inputFullname = document.getElementById("formFullName").value;
   var inputEmail = document.getElementById("formEmail").value;
@@ -58,11 +73,10 @@ xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8")
 xhr.send(post)
 xhr.onload = function(){
     if(xhr.status === 200){
-        console.log("Det funka")
-        var data = JSON.stringify(this.response)
-        var token = data[0];
-        console.log(token)
+      var data = JSON.parse(this.response)
+      console.log(data[0])
     } 
+    xhr.send()
 
 }
 

@@ -23,6 +23,7 @@ public class RegistrationService {
      private final PasswordValidator passwordValidator;
      private final NameValidator nameValidator;
 
+
     public RegistrationService(UserService userService, EmailValidator emailValidator, ConfirmationTokenService confirmationTokenService, EmailSender emailSender, PasswordValidator passwordValidator, NameValidator nameValidator) {
         this.userService = userService;
         this.emailValidator = emailValidator;
@@ -31,6 +32,8 @@ public class RegistrationService {
         this.passwordValidator = passwordValidator;
         this.nameValidator = nameValidator;
     }
+
+
 
     public String register(RegistrationRequest registrationRequest){
         boolean isValidEmail = emailValidator.test(registrationRequest.getEmail());

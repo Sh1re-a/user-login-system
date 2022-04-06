@@ -79,9 +79,19 @@
     border: 3px solid #6548F8;
     border-radius: 5px;
     outline: none;
-    margin-bottom: 20px;
-   
+    margin-bottom: 20px;  
+}
+
+.fullNameForm.valid{
+    position: absolute;
+
+    background: url(/src/main/resources/static/images/valid.png);
+}
+.fullNameForm.invalid{
+    position: absolute;
     
+    background-size: cover;
+    background: url(/src/main/resources/static/images/invalid.png);
 }
 
 input[type="text"] {
