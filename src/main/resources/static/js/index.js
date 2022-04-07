@@ -48,7 +48,7 @@ function logKey(e) {
  function validateFullName(){
   var inputFullname = document.getElementById("formFullName").value;
   var inputFullNameWithoutValue = document.getElementById("formFullName")
-  var pattern = /^\s*([A-Za-z]{1,}([\.,] |[-']| ))+[A-Za-z]+\.?\s*$/
+  var pattern = /^[a-zA-Z\s]+$/
   if(inputFullname.match(pattern)){
     
      var findInvalidImg = document.getElementById("invalidNameImg")
@@ -97,7 +97,7 @@ function logKey(e) {
 function validatePassword(){
   var inputFullname = document.getElementById("formPassword").value;
   var inputFullNameWithoutValue = document.getElementById("formPassword")
-  var pattern = /^\s*([A-Za-z]{1,}([\.,] |[-']| ))+[A-Za-z]+\.?\s*$/
+  var pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\w\W]{8,}$/
   if(inputFullname.match(pattern)){
     
      var findInvalidImg = document.getElementById("invalidPasswordImg")
@@ -147,7 +147,7 @@ function validatePassword(){
 function validateEmail(){
   var inputFullname = document.getElementById("formEmail").value;
   var inputFullNameWithoutValue = document.getElementById("formEmail")
-  var pattern = /^\s*([A-Za-z]{1,}([\.,] |[-']| ))+[A-Za-z]+\.?\s*$/
+  var pattern = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
   if(inputFullname.match(pattern)){
     
      var findInvalidImg = document.getElementById("invalidEmailImg")
