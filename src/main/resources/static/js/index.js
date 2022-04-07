@@ -144,6 +144,57 @@ function validatePassword(){
   }
 }
 
+function validateEmail(){
+  var inputFullname = document.getElementById("formEmail").value;
+  var inputFullNameWithoutValue = document.getElementById("formEmail")
+  var pattern = /^\s*([A-Za-z]{1,}([\.,] |[-']| ))+[A-Za-z]+\.?\s*$/
+  if(inputFullname.match(pattern)){
+    
+     var findInvalidImg = document.getElementById("invalidEmailImg")
+     var findvalidImg = document.getElementById("validEmailImg")
+     if(findInvalidImg != null){
+      findInvalidImg.remove()
+     }
+     if(findvalidImg != null){
+      findvalidImg.remove()
+     }
+    
+    var createValidImg = document.createElement("img")
+    createValidImg.src = "/src/main/resources/static/images/valid.png"
+    createValidImg.setAttribute("class","validEmailImg")
+    createValidImg.setAttribute("id", "validEmailImg")
+    var findDiv = document.getElementById("formBox");
+    findDiv.appendChild(createValidImg)
+  }
+  else if(inputFullname == ""){
+    var findInvalidImg = document.getElementById("invalidEmailImg")
+     var findvalidImg = document.getElementById("validEmailImg")
+     if(findInvalidImg != null || findvalidImg != null){
+      findInvalidImg.remove()
+      findvalidImg.remove()
+     }
+  }
+  else{
+    var findvalidImg = document.getElementById("validEmailImg")
+    var findInvalidImg = document.getElementById("invalidEmailImg")
+    if(findInvalidImg != null){
+      findInvalidImg.remove()
+     }
+     if(findvalidImg != null){
+      findvalidImg.remove()
+     }
+    
+    
+    var createValidImg = document.createElement("img")
+    createValidImg.src = "/src/main/resources/static/images/invalid.png"
+    createValidImg.setAttribute("class","invalidEmailImg")
+    createValidImg.setAttribute("id", "invalidEmailImg")
+    var findDiv = document.getElementById("formBox");
+    findDiv.appendChild(createValidImg)
+  }
+}
+
+
 
 
 
