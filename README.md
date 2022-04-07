@@ -21,7 +21,7 @@
 - Användare lagras in i databasen via API
 - Lösenordet krypteras innan det lagras i databasen
 - Varje ny användare får en confirmation token som används för att aktivera sitt konto
-- Email,Namn och lösenord valideras både i backend och frontend
+- Email,namn och lösenord valideras både i backend och frontend
 
 
 ### Features coming
