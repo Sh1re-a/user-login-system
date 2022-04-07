@@ -1,10 +1,12 @@
 
 var delayInMilliseconds = 5000; //1 second
 
+/*
 setTimeout(function() {
   fadeOutEffect("animated-title"
   )
 }, delayInMilliseconds);
+*/
 
 function fadeOutEffect(id) {
     var s = document.getElementById(id).style;
@@ -18,8 +20,8 @@ function fadeInEffect(id) {
     div.classList.toggle("fadeIn")
     
 }
-
 /*
+
 setTimeout(function() {
     var s2 = document.getElementById('animated-title')
     s2.remove()
@@ -38,20 +40,61 @@ input.onkeyup = logKey;
 function logKey(e) {
   log.textContent += ` ${e.code}`;
 }
+
 */
 
-function validateFullName(){
+
+
+ function validateFullName(){
   var inputFullname = document.getElementById("formFullName").value;
   var inputFullNameWithoutValue = document.getElementById("formFullName")
-  var pattern = "^[a-zA-Z\s]+$"
+  var pattern = /^\s*([A-Za-z]{1,}([\.,] |[-']| ))+[A-Za-z]+\.?\s*$/
   if(inputFullname.match(pattern)){
-    inputFullNameWithoutValue.classList
+    
+     var findInvalidImg = document.getElementById("invalidImg")
+     var findvalidImg = document.getElementById("validImg")
+     if(findInvalidImg != null){
+      findInvalidImg.remove()
+     }
+     if(findvalidImg != null){
+      findvalidImg.remove()
+     }
+    
+    var createValidImg = document.createElement("img")
+    createValidImg.src = "/src/main/resources/static/images/valid.png"
+    createValidImg.setAttribute("class","validImg")
+    createValidImg.setAttribute("id", "validImg")
+    var findDiv = document.getElementById("formBox");
+    findDiv.appendChild(createValidImg)
+  }
+  else if(inputFullname == ""){
+    var findInvalidImg = document.getElementById("invalidImg")
+     var findvalidImg = document.getElementById("validImg")
+     if(findInvalidImg != null || findvalidImg != null){
+      findInvalidImg.remove()
+      findvalidImg.remove()
+     }
   }
   else{
-    inputFullNameWithoutValue.classList.remove("valid")
-    inputFullNameWithoutValue.classList.add("invalid")
+    var findvalidImg = document.getElementById("validImg")
+    var findInvalidImg = document.getElementById("invalidImg")
+    if(findInvalidImg != null){
+      findInvalidImg.remove()
+     }
+     if(findvalidImg != null){
+      findvalidImg.remove()
+     }
+    
+    
+    var createValidImg = document.createElement("img")
+    createValidImg.src = "/src/main/resources/static/images/invalid.png"
+    createValidImg.setAttribute("class","invalidImg")
+    createValidImg.setAttribute("id", "invalidImg")
+    var findDiv = document.getElementById("formBox");
+    findDiv.appendChild(createValidImg)
   }
 }
+
 
 function register(){
   var inputFullname = document.getElementById("formFullName").value;
