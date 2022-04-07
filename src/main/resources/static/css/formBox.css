@@ -130,6 +130,11 @@ input[type="password"] {
     
 }
 
+.submitButton:active{
+    background: darkblue;
+    outline: none;
+}
+
 .validNameImg{
     position: absolute;
     width: 20px;
@@ -177,4 +182,11 @@ input[type="password"] {
     height: 20px;
     left: 465px;
     top: 383px;
+}
+
+.succesfullLogin{
+    opacity: 1;
+    position: absolute;
+    left: 280px;
+    top: 200px
 }

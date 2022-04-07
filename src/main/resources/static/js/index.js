@@ -191,6 +191,7 @@ function validateEmail(){
     createValidImg.setAttribute("id", "invalidEmailImg")
     var findDiv = document.getElementById("formBox");
     findDiv.appendChild(createValidImg)
+    
   }
 }
 
@@ -201,6 +202,13 @@ function validateEmail(){
 
 
 function register(){
+  checkIfEmailIsValid = document.getElementById("validEmailImg")
+  checkIfFullNameIsValid = document.getElementById("validNameImg")
+  checkIfPasswordIsValid = document.getElementById("validPasswordImg")
+
+  if(checkIfEmailIsValid != null && checkIfFullNameIsValid != null && checkIfPasswordIsValid != null ){
+
+  
   var inputFullname = document.getElementById("formFullName").value;
   var inputEmail = document.getElementById("formEmail").value;
   var inputPassword = document.getElementById("formPassword").value;
@@ -226,4 +234,6 @@ xhr.onload = function(){
 
 }
 
+  }
+  
 }
