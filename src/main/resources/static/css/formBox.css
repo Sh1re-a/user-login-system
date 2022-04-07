@@ -130,7 +130,7 @@ input[type="password"] {
     
 }
 
-.validImg{
+.validNameImg{
     position: absolute;
     width: 20px;
     height: 20px;
@@ -138,10 +138,27 @@ input[type="password"] {
     top: 310px;
 }
 
-.invalidImg{
+.invalidNameImg{
     position: absolute;
     width: 20px;
     height: 20px;
     left: 465px;
     top: 310px;
+}
+
+.validPasswordImg{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 465px;
+    top: 456px;
+}
+
+
+.invalidPasswordImg{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 465px;
+    top: 456px;
 }

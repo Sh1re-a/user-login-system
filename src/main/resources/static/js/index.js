@@ -51,8 +51,8 @@ function logKey(e) {
   var pattern = /^\s*([A-Za-z]{1,}([\.,] |[-']| ))+[A-Za-z]+\.?\s*$/
   if(inputFullname.match(pattern)){
     
-     var findInvalidImg = document.getElementById("invalidImg")
-     var findvalidImg = document.getElementById("validImg")
+     var findInvalidImg = document.getElementById("invalidNameImg")
+     var findvalidImg = document.getElementById("validNameImg")
      if(findInvalidImg != null){
       findInvalidImg.remove()
      }
@@ -62,22 +62,22 @@ function logKey(e) {
     
     var createValidImg = document.createElement("img")
     createValidImg.src = "/src/main/resources/static/images/valid.png"
-    createValidImg.setAttribute("class","validImg")
-    createValidImg.setAttribute("id", "validImg")
+    createValidImg.setAttribute("class","validNameImg")
+    createValidImg.setAttribute("id", "validNameImg")
     var findDiv = document.getElementById("formBox");
     findDiv.appendChild(createValidImg)
   }
   else if(inputFullname == ""){
-    var findInvalidImg = document.getElementById("invalidImg")
-     var findvalidImg = document.getElementById("validImg")
+    var findInvalidImg = document.getElementById("invalidNameImg")
+     var findvalidImg = document.getElementById("validNameImg")
      if(findInvalidImg != null || findvalidImg != null){
       findInvalidImg.remove()
       findvalidImg.remove()
      }
   }
   else{
-    var findvalidImg = document.getElementById("validImg")
-    var findInvalidImg = document.getElementById("invalidImg")
+    var findvalidImg = document.getElementById("validNameImg")
+    var findInvalidImg = document.getElementById("invalidNameImg")
     if(findInvalidImg != null){
       findInvalidImg.remove()
      }
@@ -88,12 +88,65 @@ function logKey(e) {
     
     var createValidImg = document.createElement("img")
     createValidImg.src = "/src/main/resources/static/images/invalid.png"
-    createValidImg.setAttribute("class","invalidImg")
-    createValidImg.setAttribute("id", "invalidImg")
+    createValidImg.setAttribute("class","invalidNameImg")
+    createValidImg.setAttribute("id", "invalidNameImg")
     var findDiv = document.getElementById("formBox");
     findDiv.appendChild(createValidImg)
   }
 }
+function validatePassword(){
+  var inputFullname = document.getElementById("formPassword").value;
+  var inputFullNameWithoutValue = document.getElementById("formPassword")
+  var pattern = /^\s*([A-Za-z]{1,}([\.,] |[-']| ))+[A-Za-z]+\.?\s*$/
+  if(inputFullname.match(pattern)){
+    
+     var findInvalidImg = document.getElementById("invalidPasswordImg")
+     var findvalidImg = document.getElementById("validPasswordImg")
+     if(findInvalidImg != null){
+      findInvalidImg.remove()
+     }
+     if(findvalidImg != null){
+      findvalidImg.remove()
+     }
+    
+    var createValidImg = document.createElement("img")
+    createValidImg.src = "/src/main/resources/static/images/valid.png"
+    createValidImg.setAttribute("class","validPasswordImg")
+    createValidImg.setAttribute("id", "validPasswordImg")
+    var findDiv = document.getElementById("formBox");
+    findDiv.appendChild(createValidImg)
+  }
+  else if(inputFullname == ""){
+    var findInvalidImg = document.getElementById("invalidPasswordImg")
+     var findvalidImg = document.getElementById("validPasswordImg")
+     if(findInvalidImg != null || findvalidImg != null){
+      findInvalidImg.remove()
+      findvalidImg.remove()
+     }
+  }
+  else{
+    var findvalidImg = document.getElementById("validPasswordImg")
+    var findInvalidImg = document.getElementById("invalidPasswordImg")
+    if(findInvalidImg != null){
+      findInvalidImg.remove()
+     }
+     if(findvalidImg != null){
+      findvalidImg.remove()
+     }
+    
+    
+    var createValidImg = document.createElement("img")
+    createValidImg.src = "/src/main/resources/static/images/invalid.png"
+    createValidImg.setAttribute("class","invalidPasswordImg")
+    createValidImg.setAttribute("id", "invalidPasswordImg")
+    var findDiv = document.getElementById("formBox");
+    findDiv.appendChild(createValidImg)
+  }
+}
+
+
+
+
 
 
 function register(){
